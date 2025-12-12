@@ -8,12 +8,15 @@
     <script src="https://unpkg.com/lucide@latest"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script type="importmap">
-    {
-      "imports": {
-        "@google/genai": "https://esm.sh/@google/genai@^1.33.0"
-      }
-    }
-    </script>
+{
+  "imports": {
+    "@google/genai": "https://esm.sh/@google/genai@^1.33.0",
+    "react": "https://esm.sh/react@^19.2.3",
+    "lucide-react": "https://esm.sh/lucide-react@^0.560.0",
+    "react/": "https://esm.sh/react@^19.2.3/"
+  }
+}
+</script>
     <style>
       body {
         background-color: #141414;
@@ -257,5 +260,481 @@
         { id: 2, title: "Wednesday", type: 'tv', overview: "Smart, sarcastic and a little dead inside, Wednesday Addams investigates a murder spree while making new friends — and foes — at Nevermore Academy.", poster_path: "/9PFonBhy4cQy7Jz20NpMygczOkv.jpg", backdrop_path: "/iHSwvRVsRyxpX7FE7GbviaDvgGZ.jpg", matchScore: 97, genre_ids: [10765, 9648, 35], year: "2022" },
         { id: 3, title: "The Witcher", type: 'tv', overview: "Geralt of Rivia, a mutated monster-hunter for hire, journeys toward his destiny in a turbulent world where people often prove more wicked than beasts.", poster_path: "/cRLz8AmjR2D6X5U056aX3Wz2dJg.jpg", backdrop_path: "/jBJWaqoSCiARWtfV0GlqHrcdidd.jpg", matchScore: 95, genre_ids: [10765, 18, 10759], year: "2019" },
         { id: 5, title: "Breaking Bad", type: 'tv', overview: "When Walter White, a New Mexico chemistry teacher, is diagnosed with Stage III cancer and given a prognosis of two years left to live. He becomes filled with a sense of fearlessness and an unrelenting desire to secure his family's financial future at any cost.", poster_path: "/ggFHVNu6YYI5L9pCfOacjizRGt.jpg", backdrop_path: "/tsRy63Mu5cu8etL1X7ZLyf7UP1M.jpg", matchScore: 99, genre_ids: [18], year: "2008" },
-        { id: 11, title: "Squid Game", type: 'tv', overview: "Hundreds of cash-strapped players accept a strange invitation to compete in children's games. Inside, a tempting prize awaits with deadly high stakes. A survival game that has a whooping 45.6 billion-won prize at stake.", poster_path: "/dDlEmu3EZ0Pgg93K2SVNLCjCSvE.jpg", backdrop_path: "/2meX1nMdScFOoV4370rqHWKmXhY.jpg", matchScore: 96, genre_ids: [10759, 9648, 18], year: "2021" },
-        { id: 12, title: "The Queen's Gambit", type: 'tv', overview: "In a 1950s orphanage, a young girl reveals an astonishing talent for chess and begins an unlikely journey to stardom while grappling with addiction.", poster_path: "/zU0htwkhnGbqCV2nAB8ik4fP4oF.jpg", backdrop_path: "/34OGjFEbHj0E3lE2w0iTUVq00y.
+        { id: 11, title: "Squid Game", type: 'tv', overview: "Hundreds of cash-strapped players accept a strange invitation to compete in children's games. Inside, a tempting prize awaits with deadly high stakes.", poster_path: "/dDlEmu3EZ0Pgg93K2SVNLCjCSvE.jpg", backdrop_path: "/2meX1nMdScFOoV4370rqHWKmXhY.jpg", matchScore: 96, genre_ids: [10759, 9648, 18], year: "2021" },
+        { id: 12, title: "The Queen's Gambit", type: 'tv', overview: "In a 1950s orphanage, a young girl reveals an astonishing talent for chess and begins an unlikely journey to stardom while grappling with addiction.", poster_path: "/zU0htwkhnGbqCV2nAB8ik4fP4oF.jpg", backdrop_path: "/34OGjFEbHj0E3lE2w0iTUVq00y.jpg", matchScore: 98, genre_ids: [18], year: "2020" },
+        { id: 13, title: "Money Heist", type: 'tv', overview: "To carry out the biggest heist in history, a mysterious man called The Professor recruits a band of eight robbers who have a single characteristic: none of them has anything to lose.", poster_path: "/reEMJA1uzscCbkpeRJeTT2bjqUp.jpg", backdrop_path: "/gKkl37BQuKTanygYQG1pyYgLVgf.jpg", matchScore: 98, genre_ids: [80, 18], year: "2017" },
+        { id: 14, title: "Bridgerton", type: 'tv', overview: "Wealth, lust, and betrayal set against the backdrop of Regency-era England, seen through the eyes of the powerful Bridgerton family.", poster_path: "/luoKpgVwi1E5nQsi7W0UuKHu2Rq.jpg", backdrop_path: "/75HBaK6qM8u4hS9R5n4g5KxKz.jpg", matchScore: 92, genre_ids: [18, 10749], year: "2020" },
+        { id: 15, title: "Arcane", type: 'tv', overview: "Set in Utopian Piltover and the oppressed underground of Zaun, the story follows the origins of two iconic League champions-and the power that will tear them apart.", poster_path: "/fqldf2t8ztc9aiwn3k6mlX3tvt.jpg", backdrop_path: "/2Fk3AB8E9d7CntNR3zduqiMxbJ5.jpg", matchScore: 99, genre_ids: [16, 18, 10765], year: "2021" },
+        { id: 16, title: "The Last of Us", type: 'tv', overview: "Twenty years after a pandemic has radically changed known civilization, infected cities are abandoned and nature is reclaiming them.", poster_path: "/u3bZgnGQ9T6juq9uyBS15KTyafP.jpg", backdrop_path: "/uDgy6hyPdsiCpsXBGPPvnVS3mGu.jpg", matchScore: 97, genre_ids: [18, 10759], year: "2023" },
+        { id: 17, title: "Black Mirror", type: 'tv', overview: "A contemporary British sci-fi anthology series that explores the dark side of life and technology.", poster_path: "/7dFZJ2ZJJdcmkp05B9NWlqTJ5tq.jpg", backdrop_path: "/57vVjteucIF3bGnZj6PimpSIpqp.jpg", matchScore: 94, genre_ids: [18, 9648, 10765], year: "2011" },
+        
+        // Movies
+        { id: 10, title: "Dune", type: 'movie', overview: "Paul Atreides, a brilliant and gifted young man born into a great destiny beyond his understanding, must travel to the most dangerous planet in the universe to ensure the future of his family and his people.", poster_path: "/d5NXSklXo0qyIYkgV94XAgMIckC.jpg", backdrop_path: "/x2IqsMlpbOhS8z4FGMqt6kMXOcd.jpg", matchScore: 95, genre_ids: [878, 12], year: "2021" },
+        { id: 4, title: "Inception", type: 'movie', overview: "Cobb, a skilled thief who commits corporate espionage by infiltrating the subconscious of his targets is offered a chance to regain his old life.", poster_path: "/9gk7admal4zlL12bFPFLC9NM5th.jpg", backdrop_path: "/s3TBrRGB1jav7y4argnzPkNPZiZ.jpg", matchScore: 97, genre_ids: [28, 878, 12], year: "2010" },
+        { id: 6, title: "The Dark Knight", type: 'movie', overview: "Batman raises the stakes in his war on crime. With the help of Lt. Jim Gordon and District Attorney Harvey Dent, Batman sets out to dismantle the remaining criminal organizations that plague the streets.", poster_path: "/qJ2tW6WMUDux911r6m7haRef0WH.jpg", backdrop_path: "/nMKdUUepR0i5zn0y1T4CsSB5chy.jpg", matchScore: 98, genre_ids: [18, 28, 80, 53], year: "2008" },
+        { id: 7, title: "Interstellar", type: 'movie', overview: "The adventures of a group of explorers who make use of a newly discovered wormhole to surpass the limitations on human space travel.", poster_path: "/gEU2QniL6E8ahEoXy9zLZn7YE1.jpg", backdrop_path: "/xJHokMBLzbDYDLUbDXnFqdiiTGY.jpg", matchScore: 94, genre_ids: [12, 18, 878], year: "2014" },
+        { id: 8, title: "Avengers: Endgame", type: 'movie', overview: "After the devastating events of Avengers: Infinity War, the universe is in ruins. With the help of remaining allies, the Avengers assemble once more.", poster_path: "/or06FN3Dka5tukK1e9sl16pB3iy.jpg", backdrop_path: "/7RyHsO4yDXtBv1zUU3mTpHeQ0d5.jpg", matchScore: 96, genre_ids: [12, 878, 28], year: "2019" },
+        { id: 9, title: "Spider-Man: Into the Spider-Verse", type: 'movie', overview: "Miles Morales is juggling his life between being a high school student and being a spider-man.", poster_path: "/xnopI5Xtky18MPhK40cZAGAOdvV.jpg", backdrop_path: "/w2PMyoyLU22YvrGK3smVM9fW1jj.jpg", matchScore: 97, genre_ids: [28, 12, 16, 878, 35], year: "2018" },
+        { id: 18, title: "Avatar: The Way of Water", type: 'movie', overview: "Set more than a decade after the events of the first film, learn the story of the Sully family (Jake, Neytiri, and their kids), the trouble that follows them, the lengths they go to keep each other safe, the battles they fight to stay alive, and the tragedies they endure.", poster_path: "/t6HIqrRAclMCA60NsSmeqe9RmNV.jpg", backdrop_path: "/8rpDcsfLJypbO6vREc05475qg9.jpg", matchScore: 96, genre_ids: [878, 12, 28], year: "2022" },
+        { id: 19, title: "Top Gun: Maverick", type: 'movie', overview: "After more than thirty years of service as one of the Navy’s top aviators, and dodging the advancement in rank that would ground him, Pete “Maverick” Mitchell finds himself training a detachment of TOP GUN graduates for a specialized mission the likes of which no living pilot has ever seen.", poster_path: "/62HCnUTziyWcpDaBO2i1DX17ljH.jpg", backdrop_path: "/aaV1YIdWKp5991AmfugtqB0pC6j.jpg", matchScore: 98, genre_ids: [28, 18], year: "2022" },
+        { id: 20, title: "Oppenheimer", type: 'movie', overview: "The story of J. Robert Oppenheimer's role in the development of the atomic bomb during World War II.", poster_path: "/8Gxv8gSFCU0XGDykEGv7zR1n2ua.jpg", backdrop_path: "/nb3xI8XI3w4pMVZ38VijItyBXux.jpg", matchScore: 99, genre_ids: [18, 36], year: "2023" }
+      ];
+
+      // --- State ---
+      const state = {
+        user: null,
+        myList: [1, 10, 5, 18], 
+        currentPage: 'home',
+        // Default Slides
+        heroSlides: [STATIC_MOVIES[0], STATIC_MOVIES[12], STATIC_MOVIES[11], STATIC_MOVIES[13], STATIC_MOVIES[16]], 
+        currentHeroIndex: 0,
+        intervalId: null
+      };
+
+      // --- Initialization ---
+      window.addEventListener('DOMContentLoaded', () => {
+        lucide.createIcons();
+        // Landing page is static html
+      });
+
+      // --- Navigation Logic ---
+      window.handleLogin = () => {
+        state.user = { name: "User" };
+        document.getElementById('landing-page').classList.add('hidden');
+        document.getElementById('app-page').classList.remove('hidden');
+        navigateTo('home');
+      };
+
+      window.navigateTo = (page) => {
+        state.currentPage = page;
+        
+        // Update Nav Active State
+        document.querySelectorAll('.nav-link').forEach(el => {
+           el.classList.remove('text-white', 'font-bold');
+           el.classList.add('text-gray-200');
+        });
+        const activeLink = Array.from(document.querySelectorAll('.nav-link')).find(el => el.textContent.toLowerCase().includes(page === 'series' ? 'series' : page === 'movies' ? 'film' : page === 'new' ? 'popular' : page === 'list' ? 'list' : 'home'));
+        if (activeLink) {
+           activeLink.classList.remove('text-gray-200');
+           activeLink.classList.add('text-white', 'font-bold');
+        }
+
+        // Handle Page Content
+        const hero = document.getElementById('hero');
+        const content = document.getElementById('main-content');
+        content.innerHTML = '';
+        document.getElementById('mobile-menu').classList.add('hidden');
+        window.scrollTo(0,0);
+
+        // Update Hero Slides based on Category
+        if (page === 'home') {
+           state.heroSlides = [STATIC_MOVIES[0], STATIC_MOVIES[12], STATIC_MOVIES[11], STATIC_MOVIES[13], STATIC_MOVIES[16]]; // Stranger Things, Money Heist, Dune, Bridgerton, Black Mirror
+        } else if (page === 'series') {
+           state.heroSlides = STATIC_MOVIES.filter(m => m.type === 'tv').sort(() => 0.5 - Math.random()).slice(0, 5);
+        } else if (page === 'movies') {
+           state.heroSlides = STATIC_MOVIES.filter(m => m.type === 'movie').sort(() => 0.5 - Math.random()).slice(0, 5);
+        } else if (page === 'new') {
+           state.heroSlides = STATIC_MOVIES.filter(m => parseInt(m.year) >= 2022).slice(0, 5);
+        }
+
+        if (page === 'home') {
+           hero.classList.remove('hidden');
+           startHeroSlider();
+           renderRows([
+             { title: "Trending Now", movies: STATIC_MOVIES.slice(0, 8) },
+             { title: "Top Rated", movies: STATIC_MOVIES.filter(m => m.matchScore >= 98), isLarge: true },
+             { title: "Action Thrillers", movies: STATIC_MOVIES.filter(m => m.genre_ids.includes(28) || m.genre_ids.includes(80)) },
+             { title: "Sci-Fi Blockbusters", movies: STATIC_MOVIES.filter(m => m.genre_ids.includes(878)) },
+             { title: "TV Shows", movies: STATIC_MOVIES.filter(m => m.type === 'tv') }
+           ]);
+        } else if (page === 'series') {
+           hero.classList.remove('hidden');
+           startHeroSlider();
+           content.innerHTML = `<div class="px-4 md:px-12 -mt-24 relative z-20 mb-6"><h1 class="text-3xl font-bold drop-shadow-md">TV Shows</h1><p class="text-gray-300 drop-shadow-md">These days, the small screen has some big things happening.</p></div>`;
+           renderRows([
+             { title: "Binge-Worthy TV", movies: STATIC_MOVIES.filter(m => m.type === 'tv'), isLarge: true },
+             { title: "Crime Dramas", movies: STATIC_MOVIES.filter(m => m.type === 'tv' && m.genre_ids.includes(80)) },
+             { title: "Sci-Fi & Fantasy", movies: STATIC_MOVIES.filter(m => m.type === 'tv' && (m.genre_ids.includes(878) || m.genre_ids.includes(10765))) }
+           ]);
+        } else if (page === 'movies') {
+           hero.classList.remove('hidden');
+           startHeroSlider();
+           content.innerHTML = `<div class="px-4 md:px-12 -mt-24 relative z-20 mb-6"><h1 class="text-3xl font-bold drop-shadow-md">Movies</h1><p class="text-gray-300 drop-shadow-md">Movies move us like nothing else can, whether they’re scary, funny, dramatic, romantic or anywhere in-between.</p></div>`;
+           renderRows([
+             { title: "Blockbuster Movies", movies: STATIC_MOVIES.filter(m => m.type === 'movie'), isLarge: true },
+             { title: "Action & Adventure", movies: STATIC_MOVIES.filter(m => m.type === 'movie' && m.genre_ids.includes(28)) },
+             { title: "Award Winning", movies: STATIC_MOVIES.filter(m => m.type === 'movie' && m.matchScore > 95) }
+           ]);
+        } else if (page === 'new') {
+           hero.classList.remove('hidden');
+           startHeroSlider();
+           content.innerHTML = `<div class="px-4 md:px-12 -mt-24 relative z-20 mb-6"><h1 class="text-3xl font-bold drop-shadow-md">New & Popular</h1></div>`;
+           renderRows([
+             { title: "New Releases", movies: STATIC_MOVIES.filter(m => parseInt(m.year) >= 2021), isLarge: true },
+             { title: "Worth the Wait", movies: STATIC_MOVIES.filter(m => parseInt(m.year) >= 2022) }
+           ]);
+        } else if (page === 'list') {
+           hero.classList.add('hidden');
+           stopHeroSlider();
+           const listMovies = STATIC_MOVIES.filter(m => state.myList.includes(m.id));
+           content.innerHTML = `
+             <div class="px-4 md:px-12 pt-24 min-h-screen">
+                <h1 class="text-3xl font-bold mb-8">My List</h1>
+                ${listMovies.length === 0 ? '<p class="text-gray-400">Your list is empty. Add shows and movies that you want to watch later.</p>' : ''}
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-y-8 gap-x-4">
+                   ${listMovies.map(m => `
+                      <div onclick="window.openDetails(${m.id})" class="relative group cursor-pointer transition duration-300 hover:scale-105 hover:z-50">
+                          <img src="${TMDB_IMAGE_BASE_URL}${m.poster_path}" class="w-full rounded-md object-cover shadow-lg aspect-[2/3]" />
+                           <div class="absolute inset-0 bg-black/10 hover:bg-transparent transition"></div>
+                           <div class="opacity-0 group-hover:opacity-100 absolute bottom-0 left-0 right-0 p-2 bg-gradient-to-t from-black via-black/80 to-transparent rounded-b-md transition-opacity duration-300">
+                               <h3 class="text-white text-sm font-bold truncate">${m.title}</h3>
+                               <p class="text-green-400 text-xs font-bold">${m.matchScore}% Match</p>
+                            </div>
+                      </div>
+                   `).join('')}
+                </div>
+             </div>
+           `;
+        }
+        lucide.createIcons();
+      };
+
+      window.toggleMobileMenu = () => {
+         document.getElementById('mobile-menu').classList.toggle('hidden');
+      };
+
+      // --- Hero Slideshow ---
+      function renderHeroSlides() {
+        const hero = document.getElementById('hero');
+        // If hero is hidden, don't render
+        if(hero.classList.contains('hidden')) return;
+
+        hero.innerHTML = state.heroSlides.map((movie, index) => `
+          <div class="hero-slide absolute top-0 left-0 w-full h-full ${index === state.currentHeroIndex ? 'active' : ''}" id="slide-${index}">
+            <div class="absolute top-0 left-0 w-full h-full">
+               <img src="${TMDB_IMAGE_BASE_URL}${movie.backdrop_path}" alt="${movie.title}" class="w-full h-full object-cover" />
+               <div class="absolute inset-0 bg-gradient-to-r from-neutral-900 via-neutral-900/40 to-transparent"></div>
+               <div class="absolute inset-0 bg-gradient-to-t from-neutral-900 via-transparent to-transparent"></div>
+            </div>
+            <div class="absolute top-[30%] md:top-[35%] left-4 md:left-12 max-w-2xl z-20 space-y-4">
+               <h1 class="text-4xl md:text-6xl font-black drop-shadow-lg tracking-tight animate-fade-in">${movie.title}</h1>
+               <div class="flex items-center gap-3 text-sm md:text-base font-semibold text-green-400 animate-fade-in" style="animation-delay: 0.1s">
+                  <span>${movie.matchScore}% Match</span>
+                  <span class="text-gray-300">${movie.year}</span>
+                  <span class="border border-gray-500 px-1 text-xs text-gray-300 rounded">HD</span>
+                  <span class="text-gray-300">TV-MA</span>
+               </div>
+               <p class="text-base md:text-lg text-gray-200 drop-shadow-md line-clamp-3 w-[90%] md:w-full animate-fade-in" style="animation-delay: 0.2s">${movie.overview}</p>
+               <div class="flex items-center gap-3 pt-4 animate-fade-in" style="animation-delay: 0.3s">
+                  <button onclick="playVideo('${movie.title}')" class="flex items-center gap-2 bg-white text-black px-6 md:px-8 py-2 md:py-3 rounded font-bold hover:bg-opacity-80 transition transform hover:scale-105">
+                     <i data-lucide="play" class="w-5 h-5 fill-black"></i> Play
+                  </button>
+                  <button onclick="window.openDetails(${movie.id})" class="flex items-center gap-2 bg-gray-500/70 text-white px-6 md:px-8 py-2 md:py-3 rounded font-bold hover:bg-gray-500/50 transition backdrop-blur-sm transform hover:scale-105">
+                     <i data-lucide="info" class="w-5 h-5"></i> More Info
+                  </button>
+               </div>
+            </div>
+          </div>
+        `).join('');
+        lucide.createIcons();
+      }
+
+      function startHeroSlider() {
+        stopHeroSlider(); // clear existing
+        state.currentHeroIndex = 0;
+        renderHeroSlides();
+        
+        state.intervalId = setInterval(() => {
+          if (document.hidden) return;
+          
+          const prevIndex = state.currentHeroIndex;
+          state.currentHeroIndex = (state.currentHeroIndex + 1) % state.heroSlides.length;
+          
+          const prevSlide = document.getElementById(`slide-${prevIndex}`);
+          const nextSlide = document.getElementById(`slide-${state.currentHeroIndex}`);
+          
+          if (prevSlide && nextSlide) {
+             prevSlide.classList.remove('active');
+             nextSlide.classList.add('active');
+          }
+        }, 8000); 
+      }
+
+      function stopHeroSlider() {
+         if (state.intervalId) {
+            clearInterval(state.intervalId);
+            state.intervalId = null;
+         }
+      }
+
+      // --- Row Rendering ---
+      function renderRows(categories) {
+        const container = document.getElementById('main-content');
+        // Do not clear container here if we appended header content earlier
+        // We just append rows
+        
+        categories.forEach((cat, index) => {
+           // Skip empty categories
+           if (cat.movies.length === 0) return;
+
+           const rowId = `row-${Math.random().toString(36).substr(2, 9)}`;
+           const rowHtml = `
+             <div class="space-y-2 md:space-y-4 my-8 pl-4 md:pl-12 group relative animate-fade-in">
+                <h2 class="text-white text-lg md:text-xl font-semibold transition hover:text-white cursor-pointer inline-flex items-center gap-2">
+                   ${cat.title}
+                   <span class="text-xs text-cyan-400 font-normal hidden group-hover:inline opacity-0 group-hover:opacity-100 transition-opacity">Explore All &gt;</span>
+                </h2>
+                <div class="relative group/row">
+                   <div onclick="scrollRow('${rowId}', -500)" class="absolute top-0 bottom-0 left-0 z-40 m-auto h-full w-12 cursor-pointer bg-black/50 opacity-0 group-hover/row:opacity-100 transition duration-300 hover:bg-black/70 text-white flex items-center justify-center rounded-r-md">
+                      <i data-lucide="chevron-left" class="w-8 h-8"></i>
+                   </div>
+                   <div id="${rowId}" class="flex items-center gap-2 md:gap-4 overflow-x-scroll no-scrollbar scroll-smooth py-4 pl-1">
+                      ${cat.movies.map(m => `
+                         <div onclick="window.openDetails(${m.id})" class="relative flex-none cursor-pointer transition duration-300 hover:scale-105 hover:z-50 ${cat.isLarge ? 'w-[160px] md:w-[220px]' : 'w-[200px] md:w-[280px]'}">
+                            <img src="${TMDB_IMAGE_BASE_URL}${cat.isLarge ? m.poster_path : m.backdrop_path}" class="w-full rounded-md object-cover shadow-lg ${cat.isLarge ? 'aspect-[2/3]' : 'aspect-video'}" loading="lazy" />
+                            <div class="absolute inset-0 bg-black/10 hover:bg-transparent transition"></div>
+                            <div class="opacity-0 hover:opacity-100 absolute bottom-0 left-0 right-0 p-2 bg-gradient-to-t from-black via-black/80 to-transparent rounded-b-md transition-opacity duration-300 flex flex-col justify-end min-h-[50%]">
+                               <h3 class="text-white text-sm font-bold truncate">${m.title}</h3>
+                               <p class="text-green-400 text-xs font-bold">${m.matchScore}% Match</p>
+                               <div class="flex gap-2 text-[10px] text-white mt-1">
+                                  ${m.genre_ids.slice(0, 2).map(id => `<span class="border border-gray-600 px-1 rounded bg-black/40">Genre</span>`).join('')}
+                               </div>
+                            </div>
+                         </div>
+                      `).join('')}
+                   </div>
+                   <div onclick="scrollRow('${rowId}', 500)" class="absolute top-0 bottom-0 right-0 z-40 m-auto h-full w-12 cursor-pointer bg-black/50 opacity-0 group-hover/row:opacity-100 transition duration-300 hover:bg-black/70 text-white flex items-center justify-center rounded-l-md">
+                      <i data-lucide="chevron-right" class="w-8 h-8"></i>
+                   </div>
+                </div>
+             </div>
+           `;
+           container.innerHTML += rowHtml;
+        });
+        lucide.createIcons();
+      }
+
+      // --- Interactive Actions ---
+      window.scrollRow = (id, offset) => {
+         const el = document.getElementById(id);
+         el.scrollLeft += offset;
+      };
+
+      window.showToast = (msg) => {
+         const toast = document.getElementById('toast');
+         document.getElementById('toast-message').textContent = msg;
+         toast.classList.remove('translate-x-full');
+         setTimeout(() => {
+            toast.classList.add('translate-x-full');
+         }, 3000);
+      };
+
+      window.toggleList = (id) => {
+         const index = state.myList.indexOf(id);
+         if (index > -1) {
+            state.myList.splice(index, 1);
+            showToast("Removed from My List");
+         } else {
+            state.myList.push(id);
+            showToast("Added to My List");
+         }
+         // Re-render buttons in modal if open
+         const btn = document.getElementById(`list-btn-${id}`);
+         if (btn) {
+            const inList = state.myList.includes(id);
+            btn.innerHTML = inList ? `<i data-lucide="check" class="w-5 h-5"></i>` : `<i data-lucide="plus" class="w-5 h-5"></i>`;
+            lucide.createIcons();
+         }
+         // If on list page, re-render
+         if (state.currentPage === 'list') navigateTo('list');
+      };
+
+      window.rateMovie = () => {
+         showToast("Thanks for rating!");
+      };
+
+      window.playVideo = (title) => {
+         document.getElementById('video-title').textContent = `Playing: ${title}`;
+         document.getElementById('video-modal').classList.remove('hidden');
+         // Close details if open
+         closeDetails();
+      };
+
+      window.closeVideo = () => {
+         document.getElementById('video-modal').classList.add('hidden');
+      };
+
+      window.openSearch = () => {
+         document.getElementById('search-modal').classList.remove('hidden');
+         document.getElementById('search-input').focus();
+      };
+
+      window.closeSearch = () => {
+         document.getElementById('search-modal').classList.add('hidden');
+      };
+
+      window.openDetails = (movieId) => {
+         const movie = STATIC_MOVIES.find(m => m.id === movieId) || STATIC_MOVIES[0];
+         const content = document.getElementById('details-content');
+         const inList = state.myList.includes(movie.id);
+         
+         content.innerHTML = `
+            <div class="relative aspect-video w-full">
+               <img src="${TMDB_IMAGE_BASE_URL}${movie.backdrop_path}" class="w-full h-full object-cover" />
+               <div class="absolute inset-0 bg-gradient-to-t from-[#181818] via-transparent to-transparent"></div>
+               <div class="absolute bottom-8 left-8 space-y-4">
+                  <h1 class="text-4xl font-bold text-white drop-shadow-lg">${movie.title}</h1>
+                  <div class="flex gap-4">
+                     <button onclick="playVideo('${movie.title}')" class="flex items-center gap-2 bg-white text-black px-8 py-2 rounded font-bold hover:bg-opacity-80 transition">
+                        <i data-lucide="play" class="w-5 h-5 fill-black"></i> Play
+                     </button>
+                     <button id="list-btn-${movie.id}" onclick="toggleList(${movie.id})" class="border-2 border-gray-400 p-2 rounded-full hover:border-white transition group hover:bg-gray-800/50">
+                        <i data-lucide="${inList ? 'check' : 'plus'}" class="w-5 h-5 text-gray-400 group-hover:text-white"></i>
+                     </button>
+                     <button onclick="rateMovie()" class="border-2 border-gray-400 p-2 rounded-full hover:border-white transition group hover:bg-gray-800/50">
+                        <i data-lucide="thumbs-up" class="w-5 h-5 text-gray-400 group-hover:text-white"></i>
+                     </button>
+                  </div>
+               </div>
+            </div>
+            <div class="p-8 grid grid-cols-1 md:grid-cols-[2fr_1fr] gap-8 text-white">
+               <div class="space-y-4">
+                  <div class="flex items-center gap-4 text-sm font-semibold">
+                     <span class="text-green-400">${movie.matchScore}% Match</span>
+                     <span>${movie.year}</span>
+                     <span class="border border-gray-500 px-1 text-xs">HD</span>
+                  </div>
+                  <p class="text-lg leading-relaxed text-gray-300">${movie.overview}</p>
+               </div>
+               <div class="text-sm space-y-4">
+                  <div><span class="text-gray-500">Cast: </span><span class="text-gray-300 hover:underline cursor-pointer">Sample Actor, Another Actor</span></div>
+                  <div><span class="text-gray-500">Genres: </span><span class="text-gray-300">Sci-Fi, Drama, Action</span></div>
+                  <div><span class="text-gray-500">This show is: </span><span class="text-gray-300">Mind-bending, Dark</span></div>
+               </div>
+            </div>
+            <div class="p-8 pt-0">
+               <h3 class="text-xl font-bold mb-4">More Like This</h3>
+               <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                  ${STATIC_MOVIES.filter(m => m.id !== movie.id && m.type === movie.type).slice(0, 6).map(m => `
+                     <div onclick="window.openDetails(${m.id})" class="bg-neutral-800 rounded overflow-hidden cursor-pointer hover:scale-105 transition">
+                        <img src="${TMDB_IMAGE_BASE_URL}${m.backdrop_path}" class="w-full h-32 object-cover opacity-70 hover:opacity-100"/>
+                        <div class="p-2 text-xs text-gray-300 truncate">${m.title}</div>
+                     </div>
+                  `).join('')}
+               </div>
+            </div>
+         `;
+         
+         document.getElementById('details-modal').classList.remove('hidden');
+         lucide.createIcons();
+      };
+
+      window.closeDetails = () => {
+         document.getElementById('details-modal').classList.add('hidden');
+      };
+
+      // --- AI Search ---
+      window.handleSearchSubmit = async (e) => {
+         e.preventDefault();
+         const query = document.getElementById('search-input').value;
+         if (!query.trim()) return;
+         
+         const resultsContainer = document.getElementById('search-results');
+         resultsContainer.innerHTML = `
+            <div class="flex flex-col items-center justify-center h-full space-y-4">
+               <i data-lucide="loader-2" class="w-12 h-12 text-red-600 animate-spin"></i>
+               <p class="text-gray-400 animate-pulse">Consulting the neural network...</p>
+            </div>
+         `;
+         lucide.createIcons();
+
+         try {
+             if (!process.env.API_KEY) throw new Error("No API Key");
+             
+             const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+             const prompt = `You are a movie recommendation engine for a streaming service.
+                Recommend 6 movies or TV series based on this user query: "${query}".
+                Return the response in JSON format.
+                Each movie should have: title, overview (short), year (string), matchScore (number 60-99).
+                Also provide a short "explanation" string for why you chose these.`;
+
+             const response = await ai.models.generateContent({
+                model: "gemini-2.5-flash",
+                contents: prompt,
+                config: {
+                   responseMimeType: "application/json",
+                   responseSchema: {
+                     type: Type.OBJECT,
+                     properties: {
+                       recommendations: { type: Type.ARRAY, items: { type: Type.OBJECT, properties: { title: { type: Type.STRING }, overview: { type: Type.STRING }, year: { type: Type.STRING }, matchScore: { type: Type.NUMBER } } } },
+                       explanation: { type: Type.STRING }
+                     }
+                   }
+                }
+             });
+             
+             const json = JSON.parse(response.text || "{}");
+             const enhancedMovies = (json.recommendations || []).map(genMovie => {
+                const match = STATIC_MOVIES.find(m => m.title.toLowerCase() === genMovie.title.toLowerCase());
+                if (match) return { ...match, ...genMovie, matchScore: genMovie.matchScore || 85 };
+                const randomFallback = STATIC_MOVIES[Math.floor(Math.random() * STATIC_MOVIES.length)];
+                return {
+                   id: Math.floor(Math.random() * 10000),
+                   title: genMovie.title,
+                   overview: genMovie.overview,
+                   matchScore: genMovie.matchScore || 75,
+                   poster_path: randomFallback.poster_path,
+                   backdrop_path: randomFallback.backdrop_path,
+                   genre_ids: []
+                };
+             });
+
+             resultsContainer.innerHTML = `
+                <div class="space-y-6">
+                  <div class="bg-neutral-800/50 p-4 rounded-lg border border-neutral-700">
+                    <h3 class="text-green-400 font-semibold mb-1 text-sm">AI Insight</h3>
+                    <p class="text-gray-300 italic">"${json.explanation}"</p>
+                  </div>
+                  <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+                    ${enhancedMovies.map(m => `
+                       <div onclick="window.openDetails(${m.id})" class="group relative cursor-pointer bg-neutral-800 rounded-lg overflow-hidden transition hover:scale-105">
+                         <img src="${TMDB_IMAGE_BASE_URL}${m.poster_path}" class="w-full aspect-[2/3] object-cover opacity-80 group-hover:opacity-100 transition" />
+                         <div class="p-2">
+                           <h4 class="font-bold text-sm text-white truncate">${m.title}</h4>
+                           <div class="flex justify-between items-center mt-1">
+                              <span class="text-xs text-gray-400">${m.year || '2023'}</span>
+                              <span class="text-xs text-green-500 font-bold">${m.matchScore}% Match</span>
+                           </div>
+                         </div>
+                       </div>
+                    `).join('')}
+                  </div>
+                </div>
+             `;
+             lucide.createIcons();
+
+         } catch (e) {
+             console.error(e);
+             resultsContainer.innerHTML = `
+                <div class="text-center text-red-500 mt-10">
+                   <p>Something went wrong. Please check your API key.</p>
+                   <p class="text-xs text-gray-500 mt-2">${e.message}</p>
+                </div>
+             `;
+         }
+      };
+
+      // Navbar scroll effect
+      window.addEventListener('scroll', () => {
+        const nav = document.getElementById('navbar');
+        if (window.scrollY > 0) {
+           nav.classList.add('bg-neutral-900', 'shadow-xl');
+           nav.classList.remove('bg-transparent', 'bg-gradient-to-b');
+        } else {
+           nav.classList.remove('bg-neutral-900', 'shadow-xl');
+           nav.classList.add('bg-transparent', 'bg-gradient-to-b');
+        }
+      });
+    </script>
+  </body>
+</html>
